@@ -22,7 +22,7 @@ function start() {
     // register jobs
     job.register('mongobackup');
 
-    //Job.tick('mongobackup');
+    //job.tick('mongobackup');
 
     //Job.showInfo();
 
