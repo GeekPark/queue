@@ -1,5 +1,5 @@
-qlist-queue
-===========
+Queue
+=====
 
 定时执行程序
 
@@ -20,12 +20,12 @@ module.exports = {
 queue.js 中注册 Job
 ```
 // 定义 Job 存放的路径
-Job.basePath = 'xxx';
+job.basePath = 'xxx';
 // 注册路径下文件名为 job.js 的 Job
-Job.register('job');
+job.register('job');
 ```
 
 ```
 cd lib
-ln -s ../../base focobase
+ln -s ../../base base
 ```
