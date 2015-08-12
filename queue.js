@@ -24,11 +24,11 @@ function start() {
 
     //job.tick('mongobackup');
 
-    //Job.showInfo();
+    //job.showInfo();
 
     /*
     setTimeout(function() {
-        Job.stopAll();
+        job.stopAll();
     }, 30000);
     */
 }
