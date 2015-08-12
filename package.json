@@ -1,0 +1,23 @@
+{
+  "name": "qlist-queue",
+  "version": "0.1.0",
+  "description": "qlist job queue",
+  "private": true,
+  "dependencies": {
+    "cron": "^1.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.kenengma.com/dev/qlist-queue.git"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "queue.js",
+  "keywords": [
+    "cron",
+    "job"
+  ],
+  "author": "Seven Yu",
+  "license": "ISC"
+}
