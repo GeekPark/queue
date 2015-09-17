@@ -16,10 +16,16 @@ function backup() {
 
     console.log(filename);
 
-    dbs.forEach(function(db) {
-        // backup
-        child.exec([
-            'mongodump', '-d', db, '-o', filename
+    child.exec([
+        'export', 'LC_ALL=C'
+    ].join(' '), function(error, stdout, stderr) {
+        if(error) {
+            console.log('exports', error);
+        }
+        dbs.forEach(function(db) {
+            // backup
+            child.exec([
+                'mongodump', '-d', db, '-o', filename
             ].join(' '), function(error, stdout, stderr) {
                 if(error) {
                     console.log('backup', error);
@@ -29,13 +35,14 @@ function backup() {
                 // change create time
                 child.exec([
                     'touch', '-r', path.join(filename, db, '*'), filename
-                    ].join(' '), function(error, stdout, stderr) {
-                        if(error) {
-                            console.log('change', error);
-                        } else {
-                            console.log('%s change success.', filename);
-                        }
-                    });
+                ].join(' '), function(error, stdout, stderr) {
+                    if(error) {
+                        console.log('change', error);
+                    } else {
+                        console.log('%s change success.', filename);
+                    }
+                });
             });
+        });
     });
 }
