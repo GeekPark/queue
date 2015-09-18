@@ -17,7 +17,7 @@ function backup() {
     console.log(filename);
 
     child.exec([
-        'export', 'LC_ALL=C'
+        'export', 'LC_ALL="en_US.UTF-8"'
     ].join(' '), function(error, stdout, stderr) {
         if(error) {
             console.log('exports', error);
